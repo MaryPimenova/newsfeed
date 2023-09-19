@@ -15,7 +15,7 @@ export const SmallArticle: FC<Props> = ({ title, source, date, onClick }) => {
             <span className="article-source">
         {source}
       </span>
-            <span className="article-datesource">{beautifyDate(date)}</span>
+            <span className="article-date">{beautifyDate(date)}</span>
         </article>
     )
 }

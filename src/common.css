@@ -45,14 +45,14 @@ body {
 }
 
 .article-source {
-    color: var(--color-grey);
-}
-
-.article-date {
     color: var(--color-accent);
 }
 
-.article-date + .article-source::before {
+.article-date {
+    color: var(--color-grey);
+}
+
+.article-source + .article-date::before {
     content: ' · ';
 }
 
