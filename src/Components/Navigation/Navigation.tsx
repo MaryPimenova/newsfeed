@@ -4,35 +4,34 @@ import './Navigation.css';
 import logo from '../../images/logo.svg';
 
 interface Props {
-    onNavClick:  (event: React.MouseEvent<HTMLElement>) => void;
-    currentCategory: string;
-    className?: string;   // опциональный параметр, можно не передавать в функцию, т.е. принимает значения string или undefined
-    placement: 'header' | 'footer';
+  onNavClick:  (event: React.MouseEvent<HTMLElement>) => void;
+  currentCategory: string;
+  className?: string;   // опциональный параметр, можно не передавать в функцию, т.е. принимает значения string или undefined
+  placement: 'header' | 'footer';
 }
 
 export const Navigation: FC<Props> = ({ onNavClick, currentCategory, className = '', placement = 'header' }) => {
-    return (
-        <nav className={`grid navigation navigation--${placement} ${className}`}>
-            <a className="navigation__logo" data-href="index" href="#">
-                <img className="navigation__logo-image" src={logo} alt="Логотип" />
-            </a>
-            <ul className="navigation__list">
-                {['index', 'fashion', 'technologies', 'politics', 'sport'].map((item) => {
-                    return (
-                        <li className="navigation__item" key={item}>
-                            <a
-                                onClick={onNavClick}
-                                className={`navigation__link ${currentCategory === item ? 'navigation__link--active' : '' }`}
-                                data-href={item}
-                                href="#"
-                            >
-                                {/*@ts-ignore*/}
-                                {categoryNames[item]}
-                            </a>
-                        </li>
-                    )
-                })}
-            </ul>
-        </nav>
-    )
+  return (
+    <nav className={`grid navigation navigation--${placement} ${className}`}>
+      <a className="navigation__logo" data-href="index" href="#">
+        <img className="navigation__logo-image" src={logo} alt="Логотип" />
+      </a>
+      <ul className="navigation__list">
+        {['index', 'fashion', 'technologies', 'politics', 'sport'].map((item) => {
+          return (
+            <li className="navigation__item" key={item}>
+              <a
+                onClick={onNavClick}
+                className={`navigation__link ${currentCategory === item ? 'navigation__link--active' : '' }`}
+                data-href={item}
+                href="#"
+              >
+                {categoryNames[item]}
+              </a>
+            </li>
+          )
+        })}
+      </ul>
+    </nav>
+  )
 }

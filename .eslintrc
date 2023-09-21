@@ -1,0 +1,25 @@
+{
+  "extends": ["eslint:recommended"],
+  "root": true,
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module"
+  },
+  "env": {
+    "node": true
+  },
+// Правила форматирования
+  "rules": {
+    "no-console": "error",
+    "quotes": ["error", "single"],                // чтобы кавычки всегда были одинарными
+    "object-curly-spacing": ["error", "always"],  // пробелы между фигурными скобками
+    "comma-dangle": ["error", {                   // в конце всегда стоит запятая, даже если она не нужна, чтобы при добавлении изменений Git не считал добавленную запятую
+      "arrays": "only-multiline",                 // правило работает только в случаях, когда каждый элемент прописан с новой строчки
+      "objects": "only-multiline",
+      "imports": "only-multiline",
+      "exports": "only-multiline",
+      "functions": "never"                        // отступы; в этом случае их количество равно двум пробелам
+    }],
+    "indent": ["error", 2]
+  }
+}
