@@ -18,19 +18,19 @@ export const App = () => {
     if (category) {
       setCategory(category);
     }
-  }
+  };
 
   const onArticleClick = (id: number) => {
     setArticleId(id);
-  }
+  };
 
   React.useEffect(() => {
     fetch('https://frontend.karpovcourses.net/api/v2/ru/news/' + categoryIds[category] || '')
-      .then(response => response.json())
+      .then((response) => response.json())
       .then((response: NewsAPI) => {
         setArticles(response);
-      })
-  }, [category])
+      });
+  }, [category]);
 
   return (
     <React.Fragment>
@@ -46,11 +46,16 @@ export const App = () => {
       </header>
 
       <main>
-        {articleId !== null
-          ? <ArticleItem id={articleId} categories={articles.categories} sources={articles.sources} onArticleClick = {onArticleClick}/>
-          : <Articles articles = {articles} onArticleClick = {onArticleClick} />
-        }
-
+        {articleId !== null ? (
+          <ArticleItem
+            id={articleId}
+            categories={articles.categories}
+            sources={articles.sources}
+            onArticleClick={onArticleClick}
+          />
+        ) : (
+          <Articles articles={articles} onArticleClick={onArticleClick} />
+        )}
       </main>
 
       <footer className="footer">
@@ -62,11 +67,16 @@ export const App = () => {
             className="footer__navigation"
           />
           <div className="footer__bottom">
-            <p className="footer__text">Сделано на Frontend курсе в <a rel="noreferrer" className="footer__link" href="https://karpov.courses/frontend" target="_blank">Karpov.Courses</a></p>
+            <p className="footer__text">
+              Сделано на Frontend курсе в{' '}
+              <a rel="noreferrer" className="footer__link" href="https://karpov.courses/frontend" target="_blank">
+                Karpov.Courses
+              </a>
+            </p>
             <p className="footer__text footer__text--gray">© 2023</p>
           </div>
         </div>
       </footer>
     </React.Fragment>
-  )
-}
+  );
+};

@@ -4,20 +4,20 @@ export const categoryIds: { [index: string]: number } = {
   sport: 2,
   fashion: 3,
   politics: 4,
-  other: 5
-}
+  other: 5,
+};
 
 export const categoryNames: { [index: string]: string } = {
   index: 'Главная',
   fashion: 'Мода',
   technologies: 'Технологии',
   politics: 'Политика',
-  sport: 'Спорт'
-}
+  sport: 'Спорт',
+};
 
 export const beautifyDate = (date: string): string => {
   return new Date(date).toLocaleDateString('ru-RU', {
     month: 'long',
-    day: 'numeric'
+    day: 'numeric',
   });
-}
+};

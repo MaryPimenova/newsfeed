@@ -1,5 +1,5 @@
 {
-  "extends": ["plugin:@typescript-eslint/recommended", "plugin:react/recommended"],
+  "extends": ["plugin:@typescript-eslint/recommended", "plugin:react/recommended", "prettier"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -16,27 +16,6 @@
     "browser": true
   },
   "rules": {
-    "@typescript-eslint/no-explicit-any": "off",
-
-    "quotes": "off",
-    "@typescript-eslint/quotes": ["error", "single"],
-
-    "object-curly-spacing": "off",
-    "@typescript-eslint/object-curly-spacing": ["error", "always"],
-
-    "comma-dangle": "off",
-    "@typescript-eslint/comma-dangle": ["error", {
-      "arrays": "only-multiline",
-      "objects": "only-multiline",
-      "imports": "only-multiline",
-      "exports": "only-multiline",
-      "enums": "only-multiline",
-      "generics": "only-multiline",
-      "tuples": "only-multiline",
-      "functions": "never"
-    }],
-
-    "indent": "off",
-    "@typescript-eslint/indent":["error", 2]
+    "@typescript-eslint/no-explicit-any": "off"
   }
 }

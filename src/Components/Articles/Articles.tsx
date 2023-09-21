@@ -23,10 +23,10 @@ export const Articles: FC<Props> = ({ articles, onArticleClick }) => {
                 description={item.description}
                 image={item.image}
                 category={category?.name || ''}
-                source={source?.name || ''}   // то же самое, что и теранрынй оператор source ? source.name : ''
-                onClick = {() => onArticleClick(item.id)}
+                source={source?.name || ''} // то же самое, что и теранрынй оператор source ? source.name : ''
+                onClick={() => onArticleClick(item.id)}
               />
-            )
+            );
           })}
         </section>
         <section className="articles__small-column">
@@ -38,12 +38,12 @@ export const Articles: FC<Props> = ({ articles, onArticleClick }) => {
                 title={item.title}
                 source={source?.name || ''}
                 date={item.date}
-                onClick = {() => onArticleClick(item.id)}
+                onClick={() => onArticleClick(item.id)}
               />
-            )
+            );
           })}
         </section>
       </div>
     </section>
-  )
-}
+  );
+};

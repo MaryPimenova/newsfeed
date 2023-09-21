@@ -1,12 +1,12 @@
-import React, { FC }  from 'react';
+import React, { FC } from 'react';
 import { categoryNames } from '../../utils';
 import './Navigation.css';
 import logo from '../../images/logo.svg';
 
 interface Props {
-  onNavClick:  (event: React.MouseEvent<HTMLElement>) => void;
+  onNavClick: (event: React.MouseEvent<HTMLElement>) => void;
   currentCategory: string;
-  className?: string;   // опциональный параметр, можно не передавать в функцию, т.е. принимает значения string или undefined
+  className?: string; // опциональный параметр, можно не передавать в функцию, т.е. принимает значения string или undefined
   placement: 'header' | 'footer';
 }
 
@@ -22,16 +22,16 @@ export const Navigation: FC<Props> = ({ onNavClick, currentCategory, className =
             <li className="navigation__item" key={item}>
               <a
                 onClick={onNavClick}
-                className={`navigation__link ${currentCategory === item ? 'navigation__link--active' : '' }`}
+                className={`navigation__link ${currentCategory === item ? 'navigation__link--active' : ''}`}
                 data-href={item}
                 href="#"
               >
                 {categoryNames[item]}
               </a>
             </li>
-          )
+          );
         })}
       </ul>
     </nav>
-  )
-}
+  );
+};

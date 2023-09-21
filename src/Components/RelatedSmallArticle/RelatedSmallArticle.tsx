@@ -10,7 +10,7 @@ interface Props {
 }
 export const RelatedSmallArticle: FC<Props> = ({ image, category, source, title, onClick }) => {
   return (
-    <article className="related-small-article" onClick = {onClick}>
+    <article className="related-small-article" onClick={onClick}>
       <img className="related-small-article__image" src={image} />
       <div className="related-small-article__content">
         <span className="article-category related-small-article__category">{category}</span>

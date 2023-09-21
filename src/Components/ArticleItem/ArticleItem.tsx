@@ -18,11 +18,11 @@ export const ArticleItem: FC<Props> = ({ id, categories, sources, onArticleClick
 
   React.useEffect(() => {
     fetch(`https://frontend.karpovcourses.net/api/v2/news/full/${id}`)
-      .then(response => response.json())
+      .then((response) => response.json())
       .then(setArticleItem);
 
     fetch(`https://frontend.karpovcourses.net/api/v2/news/related/${id}?count=9`)
-      .then(response => response.json())
+      .then((response) => response.json())
       .then((response: RelatedArticlesAPI) => {
         setRelatedArticles(response.items);
       });

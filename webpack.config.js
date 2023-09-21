@@ -1,5 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const EslintWebpackPlugin = require('eslint-webpack-plugin');
+const StylelintWebpackPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
   // mode: 'development',
@@ -10,29 +12,42 @@ module.exports = {
     filename: 'main.[contenthash].js',
   },
   module: {
-    rules: [{
-      test: /\.js$/,
-      use: 'babel-loader',
-      exclude: /node_modules/
-    }, {
-      test: /\.css$/,
-      use: ['style-loader', 'css-loader'],
-    }, {
-      test: /\.svg$/,
-      type: 'asset/resource'
-    }, {
-      test: /\.(ts|tsx)$/,
-      use: 'ts-loader',
-      exclude: /node_modules/
-    }]
+    rules: [
+      {
+        test: /\.js$/,
+        use: 'babel-loader',
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.svg$/,
+        type: 'asset/resource',
+      },
+      {
+        test: /\.(ts|tsx)$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+    ],
   },
   resolve: {
-    extensions: ['.js', '.ts', '.tsx']
+    extensions: ['.js', '.ts', '.tsx'],
   },
-  plugins: [new HtmlWebpackPlugin({
-    template: './src/index.html'
-  })],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+    }),
+    new StylelintWebpackPlugin({
+      files: '{**/*,*}.css',
+    }),
+    new EslintWebpackPlugin({
+      files: '{**/*,*}.{tsx,ts,js}',
+    }),
+  ],
   devServer: {
     open: true,
-  }
-}
+  },
+};
