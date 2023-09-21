@@ -4,7 +4,7 @@ This repository was created to store a project with a news feed implemented usin
 > © Alan Cooper, Software Designer and Programmer
 
 The figure below shows the appearance of the main page of the site with a news feed.
-![main_page_overview.jpg](images/main_page_overview.jpg)  
+![main_page_overview.jpg](src/images/main_page_overview.jpg)  
 
 ## Useful links
 | **DESCRIPTION** | **LINK** |
